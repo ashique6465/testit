@@ -1,4 +1,4 @@
-const API_URL = "https://symmetrical-lamp-ww499wv44xgf9qgr-8000.app.github.dev";
+const API_URL = "http://localhost:8000"
 
 type FetchOptions = Omit<RequestInit, "body"> & { json?: any; body?: BodyInit | null };
 
