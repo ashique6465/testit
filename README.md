@@ -1,95 +1,106 @@
 # API Testing Tool (FastAPI + Next.js)
 
-A full-stack API testing and monitoring tool built with FastAPI (backend) and Next.js (frontend). The tool helps developers easily test, monitor, and visualize API endpoints with a modern web interface.
+A full-stack API testing and monitoring platform built using FastAPI and Next.js.
+The application allows developers to create, send, analyze, and track API requests
+through a modern and intuitive web interface.
 
-## Features
+## Key Features
 
-- **API Request Builder**: Compose and send HTTP requests with support for all common methods.
-- **Authentication Support**: Easily add headers, tokens, or other authentication schemes.
-- **Response Visualization**: View formatted responses, headers, status codes, and response times.
-- **History & Logs**: Keep track of previous requests and API logs for auditing.
-- **User Management**: Sign up, log in, and manage API testing workspaces.
-- **Monitoring**: (Planned) Set up automated monitors for endpoint health checks.
+- **API Request Builder**
+  - Create and send HTTP requests (GET, POST, PUT, DELETE, etc.)
+  - Custom headers, query parameters, and request bodies
+
+- **Authentication Handling**
+  - Support for Bearer tokens, API keys, and custom auth headers
+
+- **Response Analysis**
+  - View formatted JSON responses
+  - Inspect status codes, headers, and response times
+
+- **Request History & Logs**
+  - Store and review previously executed API requests
+  - Useful for debugging and auditing API behavior
+
+- **User Management**
+  - Secure user registration and login
+  - User-specific API testing workspaces
+
+- **Monitoring (Planned)**
+  - Scheduled health checks for APIs
+  - Alerting for downtime or failed responses
 
 ## Tech Stack
 
 - **Backend**: FastAPI (Python)
 - **Frontend**: Next.js (TypeScript)
-- **Styling**: CSS/SCSS, Tailwind, or your chosen framework
-- **Database**: (Add your DB here if applicable)
-- **Other**: (Add Redis, Celery, or others if used)
+- **Styling**: Tailwind CSS
+- **Database**: PostgreSQL (or configurable)
+- **Other**: JWT Authentication, REST APIs
 
-## Folder Structure
+## Project Structure
 
-```
 .
 ├── backend
-│   ├── app
-│   │   ├── main.py           # FastAPI entrypoint
-│   │   ├── routers/          # API route definitions
-│   │   ├── models/           # Pydantic models
-│   │   ├── services/         # Business logic
-│   │   └── utils/            # Helper utilities
-│   ├── logs/                 # Application logs
-│   └── requirements.txt      # Python dependencies
+│ ├── app
+│ │ ├── main.py # FastAPI application entry point
+│ │ ├── routers/ # API routes
+│ │ ├── models/ # Pydantic schemas
+│ │ ├── services/ # Business logic layer
+│ │ └── utils/ # Shared utilities
+│ ├── logs/ # Application logs
+│ └── requirements.txt # Python dependencies
 ├── frontend
-│   ├── app/                  # Next.js app directory
-│   ├── components/           # Reusable UI components
-│   ├── services/             # API service functions
-│   ├── public/               # Static assets
-│   ├── package.json          # JS dependencies
-│   └── tsconfig.json         # TypeScript configuration
+│ ├── app/ # Next.js app directory
+│ ├── components/ # Reusable UI components
+│ ├── services/ # API service layer
+│ ├── public/ # Static assets
+│ ├── package.json
+│ └── tsconfig.json
 └── README.md
-```
+
+bash
+Copy code
 
 ## Getting Started
 
 ### Prerequisites
-
 - Python 3.9+
 - Node.js 18+
-- (Optional) Docker
 
 ### Backend Setup
 
 ```bash
 cd backend
-python3 -m venv venv
-source venv/bin/activate
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 uvicorn app.main:app --reload
-```
+Backend runs at: http://localhost:8000
 
-### Frontend Setup
-
-```bash
+Frontend Setup
+bash
+Copy code
 cd frontend
 npm install
 npm run dev
-```
+Frontend runs at: http://localhost:3000
 
-The backend will run on `http://localhost:8000` and the frontend on `http://localhost:3000`.
+Usage
+Open the frontend in your browser.
 
-## Usage
+Register or log in.
 
-1. Navigate to the frontend URL.
-2. Register or log in.
-3. Start composing API requests and view responses.
-4. Check request history and logs for past activity.
+Create API requests using the request builder.
 
-## Contributing
+Inspect responses, headers, and response times.
 
-Contributions are welcome! Please open issues and submit pull requests.
+Review request history for debugging and analysis.
 
-1. Fork the repo and create your branch: `git checkout -b feature/your-feature`
-2. Commit your changes: `git commit -am 'Add new feature'`
-3. Push to the branch: `git push origin feature/your-feature`
-4. Create a new Pull Request
+Future Improvements
+Automated API monitoring and alerts
 
-## License
+Request collections and environments
 
-[Add your license here, e.g., MIT, Apache 2.0, etc.]
+Export/import API configurations
 
----
-
-**Note:** This project is in active development. Core features may evolve rapidly. Please see the `issues` tab for planned improvements and bug tracking.
+Team collaboration features
