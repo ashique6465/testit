@@ -7,21 +7,26 @@ through a modern and intuitive web interface.
 ## Key Features
 
 - **API Request Builder**
+
   - Create and send HTTP requests (GET, POST, PUT, DELETE, etc.)
   - Custom headers, query parameters, and request bodies
 
 - **Authentication Handling**
+
   - Support for Bearer tokens, API keys, and custom auth headers
 
 - **Response Analysis**
+
   - View formatted JSON responses
   - Inspect status codes, headers, and response times
 
 - **Request History & Logs**
+
   - Store and review previously executed API requests
   - Useful for debugging and auditing API behavior
 
 - **User Management**
+
   - Secure user registration and login
   - User-specific API testing workspaces
 
@@ -63,6 +68,7 @@ through a modern and intuitive web interface.
 ## Getting Started
 
 ### Prerequisites
+
 - Python 3.9+
 - Node.js 18+
 
@@ -97,6 +103,17 @@ npm run dev
 - Automated API monitoring
 - Request collections and environments
 - Team collaboration
+
+---
+
+## Deployment (Docker + Kubernetes + EKS notes) 🔧
+
+See `DEPLOYMENT.md` for full step-by-step instructions. Quick notes:
+
+- Two images are expected: `api-testing-backend` and `api-testing-frontend`.
+- Use the `k8s/` manifests (namespace, deployments, services, ingress, secret template) as starting templates.
+- Create `backend-secrets` in the `api-testing` namespace with `MONGO_URI`, `DB_NAME`, and `JWT_SECRET` before applying deployments.
+- For EKS production use: install AWS Load Balancer Controller for the sample ALB ingress; use ECR for images and IAM roles/IRSA for secure image pulls and permissions.
 
 ## License
 

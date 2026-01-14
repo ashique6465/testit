@@ -1,0 +1,15 @@
+# Top-level ignores
+venv/
+backend/venv/
+frontend/node_modules/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+build/
+dist/
+.env
+.env.*
+.git
+.gitignore
