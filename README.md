@@ -39,27 +39,26 @@ through a modern and intuitive web interface.
 
 ## Project Structure
 
+```
 .
 ├── backend
-│ ├── app
-│ │ ├── main.py # FastAPI application entry point
-│ │ ├── routers/ # API routes
-│ │ ├── models/ # Pydantic schemas
-│ │ ├── services/ # Business logic layer
-│ │ └── utils/ # Shared utilities
-│ ├── logs/ # Application logs
-│ └── requirements.txt # Python dependencies
+│   ├── app
+│   │   ├── main.py
+│   │   ├── routers/
+│   │   ├── models/
+│   │   ├── services/
+│   │   └── utils/
+│   ├── logs/
+│   └── requirements.txt
 ├── frontend
-│ ├── app/ # Next.js app directory
-│ ├── components/ # Reusable UI components
-│ ├── services/ # API service layer
-│ ├── public/ # Static assets
-│ ├── package.json
-│ └── tsconfig.json
+│   ├── app/
+│   ├── components/
+│   ├── services/
+│   ├── public/
+│   ├── package.json
+│   └── tsconfig.json
 └── README.md
-
-bash
-Copy code
+```
 
 ## Getting Started
 
@@ -72,35 +71,33 @@ Copy code
 ```bash
 cd backend
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+source venv/bin/activate
 pip install -r requirements.txt
 uvicorn app.main:app --reload
-Backend runs at: http://localhost:8000
+```
 
-Frontend Setup
-bash
-Copy code
+### Frontend Setup
+
+```bash
 cd frontend
 npm install
 npm run dev
-Frontend runs at: http://localhost:3000
+```
 
-Usage
-Open the frontend in your browser.
+## Usage
 
-Register or log in.
+1. Open the frontend in your browser.
+2. Register or log in.
+3. Create API requests using the request builder.
+4. Inspect responses and headers.
+5. Review request history.
 
-Create API requests using the request builder.
+## Future Improvements
 
-Inspect responses, headers, and response times.
+- Automated API monitoring
+- Request collections and environments
+- Team collaboration
 
-Review request history for debugging and analysis.
+## License
 
-Future Improvements
-Automated API monitoring and alerts
-
-Request collections and environments
-
-Export/import API configurations
-
-Team collaboration features
+MIT License
